@@ -4,79 +4,110 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Anka - Accompagnement entrepreneurial</title>
+<link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-
 <!-- NAVIGATION -->
-<nav>
+<nav id="navbar">
   <div class="logo">
     <a href="#"><img src="./assets/images/vectologo.png" alt="Logo Anka"></a>
   </div>
-  <ul>
+  <ul class="nav-links">
     <li><a href="#">Accueil</a></li>
     <li><a href="#about">À propos</a></li>
     <li><a href="#offers">Accompagnements</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </nav>
 
+<div class="nav-overlay" id="navOverlay"></div>
 
-<!-- BANNIERE PRINCIPALE -->
+
+<!-- HERO -->
 <section class="hero">
-
-  <video class="hero-video" autoplay muted loop playsinline>
-    <source src="./assets/videos/background_hero2.mp4" type="video/mp4">
-  </video>
-
+  <img src="assets/images/Hero.jpg" alt="Anka accompagnement entrepreneurial" class="hero-bg">
   <div class="hero-overlay"></div>
-
   <div class="hero-content">
-    <h1>Crée ton entreprise avec clarté et confiance</h1>
-    <p>
-      Anka accompagne les femmes qui veulent structurer leurs idées
-      et lancer un projet aligné.
+    <p class="hero-eyebrow">Accompagnement entrepreneurial</p>
+    <h1>Structurez vos idées et lancez un projet aligné à vos valeurs</h1>
+    <p class="hero-sub">
+      Anka accompagne les femmes qui veulent transformer leur inspiration en un projet professionnel concret et durable.
     </p>
-    <a href="#contact" class="btn">Réserver un appel</a>
+<ul class="hero-services">
+  <li><a href="#offers">Coaching individuel</a></li>
+  <li><a href="#offers">Formation</a></li>
+  <li><a href="#offers">Consultance</a></li>
+  <li><a href="#offers">Prévention du burn-out</a></li>
+</ul>
+    <a href="#contact" class="btn btn-hero">Réserver un appel</a>
   </div>
-
 </section>
 
 
 <!-- ACCOMPAGNEMENTS -->
 <section id="offers" class="section">
-  <h2>Accompagnements</h2>
+  <p class="section-eyebrow reveal">Ce que nous proposons</p>
+  <h2 class="reveal">Accompagnements</h2>
+  <p class="section-intro reveal">
+    Où en êtes-vous ? Un changement, une reconversion, une nouvelle étape ?<br>
+    Anka vous accompagne de l'idée au lancement.
+  </p>
 
   <div class="cards">
-    <div class="card">
+    <div class="card reveal">
       <div class="card-img">
-        <img src="./assets/images/coaching.jpg" alt="Coaching 1:1">
+        <img src="./assets/images/coaching.jpg" alt="Coaching individuel">
       </div>
       <div class="card-body">
-        <h3>Coaching 1:1</h3>
-        <p>Un accompagnement personnalisé pour avancer sereinement.</p>
+        <h3>Coaching individuel</h3>
+        <p>Un accompagnement personnalisé en présentiel, en visioconférence ou en collectif en entreprise pour avancer avec clarté.</p>
+        <a href="#contact" class="card-link">En savoir plus →</a>
       </div>
     </div>
 
-    <div class="card">
+    <div class="card reveal">
       <div class="card-img">
-        <img src="./assets/images/programme.jpg" alt="Programme signature">
+        <img src="./assets/images/programme.jpg" alt="Formation">
       </div>
       <div class="card-body">
-        <h3>Programme signature</h3>
-        <p>Créer ton entreprise étape par étape avec méthode.</p>
+        <h3>Formation</h3>
+        <p>Des formations et workshops sur-mesure sur la création d'entreprise, la gestion de projet et le bien-être professionnel.</p>
+        <a href="#contact" class="card-link">En savoir plus →</a>
       </div>
     </div>
 
-    <div class="card">
+    <div class="card reveal">
       <div class="card-img">
-        <img src="./assets/images/diagnostic.png" alt="Diagnostic projet">
+        <img src="./assets/images/diagnostic.png" alt="Consultance">
       </div>
       <div class="card-body">
-        <h3>Diagnostic projet</h3>
-        <p>Faire le point et repartir avec un plan clair.</p>
+        <h3>Consultance</h3>
+        <p>Une offre spécifique et ponctuelle liée à la finance pour cadrer votre projet avec rigueur et précision.</p>
+        <a href="#contact" class="card-link">En savoir plus →</a>
+      </div>
+    </div>
+
+    <div class="card reveal">
+      <div class="card-img">
+        <img src="./assets/images/burnout.jpg" alt="Prévention burn-out">
+      </div>
+      <div class="card-body">
+        <h3>Prévention burn-out</h3>
+        <p>Conseiller en prévention et gestion de l'épuisement professionnel pour entreprendre durablement, sans vous sacrifier.</p>
+        <a href="#contact" class="card-link">En savoir plus →</a>
       </div>
     </div>
   </div>
@@ -86,78 +117,148 @@
 <!-- A PROPOS -->
 <section id="about" class="section about">
   <div class="about-container">
-
-    <div class="about-img">
-      <img src="./assets/images/portrait.png" alt="Fondatrice Anka">
+    <div class="about-img reveal">
+      <img src="./assets/images/Portrait.png" alt="Fondatrice Anka">
     </div>
-
     <div class="about-content">
-      <h2>À propos</h2>
-      <p>
-        J’aide les femmes à transformer leurs idées en projets concrets,
-        avec stratégie, clarté et confiance.
+      <p class="section-eyebrow reveal">Qui suis-je ?</p>
+      <h2 class="reveal">À propos</h2>
+      <p class="about-lead reveal">
+        « Aider les femmes à transformer leurs idées en projets concrets avec stratégie, clarté et confiance. »
       </p>
-
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Fuga, rerum placeat, eaque perferendis a quo tempore nihil explicabo
-        ut veritatis illum in aspernatur sint deleniti esse at necessitatibus.
+      <p class="reveal">
+        Entrepreneuse, mère de trois enfants et fondatrice de <strong>ANka</strong>, j'accompagne les femmes à transformer leurs idées en projets concrets, durables et alignés.
       </p>
-
-      <a href="#contact" class="btn">Travailler avec moi</a>
+      <p class="reveal">
+        Issue de la finance (Belgique &amp; Luxembourg), j'allie rigueur stratégique et approche humaine pour guider chaque étape, de l'idée au lancement.
+      </p>
+      <p class="reveal">
+        Mon objectif : entreprendre avec clarté, confiance et énergie — <strong>sans s'épuiser</strong>.
+      </p>
+      <p class="reveal">
+        À travers mes accompagnements, je transmets des outils concrets et une vision solide pour favoriser l'<strong>autonomisation</strong>, dans un cadre basé sur le <strong>bien-être</strong>, l'<strong>écoute</strong>, la <strong>bienveillance</strong> et le <strong>professionnalisme</strong>.
+      </p>
+      <a href="#contact" class="btn reveal">Travailler avec moi</a>
     </div>
-
   </div>
 </section>
 
 
-<!-- FORMULAIRE CONTACT -->
+<!-- CONTACT -->
 <section id="contact" class="section contact">
   <div class="contact-container">
-    <h2>Contact</h2>
-    <p class="contact-subtitle">
-      Parlez-moi de votre projet, je vous répondrai rapidement.
-    </p>
+    <p class="section-eyebrow reveal">Parlons de votre projet</p>
+    <h2 class="reveal">Contact</h2>
+    <p class="contact-subtitle reveal">Décrivez-moi votre situation, je vous répondrai dans les plus brefs délais.</p>
 
-    <form action="contact.php" method="POST" class="contact-form">
-
-      <div class="form-group">
-        <label>Nom</label>
-        <input type="text" name="name" required>
+    <form action="https://formspree.io/f/VOTRE_ID" method="POST" class="contact-form reveal" id="contactForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nom">Nom</label>
+          <input type="text" id="nom" name="nom" required>
+        </div>
+        <div class="form-group">
+          <label for="prenom">Prénom</label>
+          <input type="text" id="prenom" name="prenom" required>
+        </div>
       </div>
-
       <div class="form-group">
-        <label>Prénom</label>
-        <input type="text" name="name" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
       </div>
-
       <div class="form-group">
-        <label>Email</label>
-        <input type="email" name="email" required>
+        <label for="phone">N° de téléphone</label>
+        <input type="tel" id="phone" name="phone">
       </div>
-
       <div class="form-group">
-        <label>N° de téléphone</label>
-        <input type="tel" name="phone" required>
+        <label for="budget">Budget envisagé (optionnel)</label>
+        <select id="budget" name="budget">
+          <option value="">-- Sélectionner --</option>
+          <option>Moins de 500€</option>
+          <option>500€ – 1 500€</option>
+          <option>1 500€ – 3 000€</option>
+          <option>3 000€ et plus</option>
+        </select>
       </div>
-
       <div class="form-group">
-        <label>Votre projet</label>
-        <textarea name="message" required></textarea>
+        <label for="message">Votre projet</label>
+        <textarea id="message" name="message" required></textarea>
       </div>
-
-      <button type="submit" class="btn">Envoyer</button>
-
+      <button type="submit" class="btn" id="submitBtn">Envoyer</button>
+      <p class="form-success" id="formSuccess">
+        ✓ Message envoyé ! Je vous recontacte rapidement.
+      </p>
     </form>
   </div>
 </section>
 
+
+<!-- FOOTER -->
 <footer>
-  © 2025 Anka — Tous droits réservés
+  <div class="footer-grid">
+
+    <!-- COLONNE 1 : Brand -->
+    <div class="footer-brand">
+      <div class="footer-logo">Anka</div>
+      <p>Accompagnement entrepreneurial pour les femmes qui veulent créer avec clarté, confiance et énergie.</p>
+
+      <!-- Réseaux sociaux — à remplir quand les comptes sont prêts -->
+      <div class="footer-social">
+        <a href="#" class="social-btn" aria-label="LinkedIn">
+          <!-- LinkedIn icon -->
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+          </svg>
+        </a>
+        <a href="#" class="social-btn" aria-label="Instagram">
+          <!-- Instagram icon -->
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+        </a>
+        <a href="#" class="social-btn" aria-label="Facebook">
+          <!-- Facebook icon -->
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- COLONNE 2 : Navigation -->
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#offers">Accompagnements</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- COLONNE 3 : Services -->
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#offers">Coaching individuel</a></li>
+        <li><a href="#offers">Formation</a></li>
+        <li><a href="#offers">Consultance</a></li>
+        <li><a href="#offers">Prévention burn-out</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Barre de bas -->
+  <div class="footer-bottom">
+    <p>© 2025 Anka — Tous droits réservés</p>
+    <p>Belgique &amp; Luxembourg</p>
+  </div>
 </footer>
 
+<script src="main.js"></script>
 </body>
 </html>
-
-
-
