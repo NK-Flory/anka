@@ -64,14 +64,44 @@ revealEls.forEach(el => observer.observe(el));
 /* ===========================
    FORMSPREE — envoi AJAX
    (évite la redirection de page)
+
+   ⚠️ CONFIGURATION :
+   remplacer VOTRE_ID dans l'attribut action du <form> (index.html)
+   par l'identifiant fourni par Formspree, ex :
+   action="https://formspree.io/f/xdkogqwz"
 =========================== */
 const form       = document.getElementById('contactForm');
 const submitBtn  = document.getElementById('submitBtn');
 const successMsg = document.getElementById('formSuccess');
+const errorMsg   = document.getElementById('formError');
+
+const EMAIL_DIRECT = 'info@anka-conseil.be';
+const TEL_DIRECT   = '+32 470 60 34 45';
+
+function showError(message) {
+  errorMsg.innerHTML = message;
+  errorMsg.classList.add('show');
+}
+
+function clearError() {
+  errorMsg.classList.remove('show');
+  errorMsg.textContent = '';
+}
 
 if (form) {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    clearError();
+
+    // Garde-fou : endpoint Formspree pas encore configuré
+    if (form.action.includes('VOTRE_ID')) {
+      showError(
+        'Le formulaire n\'est pas encore actif. Écrivez-moi directement à ' +
+        '<a href="mailto:' + EMAIL_DIRECT + '">' + EMAIL_DIRECT + '</a> ' +
+        'ou appelez le <a href="tel:+32470603445">' + TEL_DIRECT + '</a>.'
+      );
+      return;
+    }
 
     // État chargement
     submitBtn.textContent = 'Envoi en cours…';
@@ -99,7 +129,11 @@ if (form) {
     } catch {
       submitBtn.textContent = 'Réessayer';
       submitBtn.disabled = false;
-      alert('Une erreur est survenue. Merci de réessayer ou de me contacter directement.');
+      showError(
+        'L\'envoi n\'a pas abouti. Réessayez, ou contactez-moi à ' +
+        '<a href="mailto:' + EMAIL_DIRECT + '">' + EMAIL_DIRECT + '</a> ' +
+        'ou au <a href="tel:+32470603445">' + TEL_DIRECT + '</a>.'
+      );
     }
   });
 }

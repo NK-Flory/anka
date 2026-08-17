@@ -4,6 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Anka - Accompagnement entrepreneurial</title>
+<meta name="description" content="Anka accompagne les femmes qui veulent transformer leur idée en projet professionnel concret : coaching individuel, formation, consultance et prévention du burn-out. Belgique &amp; Luxembourg.">
+<meta name="author" content="Adèle N'Kashama">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Anka - Accompagnement entrepreneurial">
+<meta property="og:description" content="Structurez vos idées et lancez un projet aligné à vos valeurs.">
+<meta property="og:locale" content="fr_BE">
+
 <link rel="icon" type="image/svg+xml" href="./assets/images/favicon.svg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -127,13 +135,13 @@
         « Aider les femmes à transformer leurs idées en projets concrets avec stratégie, clarté et confiance. »
       </p>
       <p class="reveal">
-        Entrepreneuse, mère de trois enfants et fondatrice de <strong>ANka</strong>, j'accompagne les femmes à transformer leurs idées en projets concrets, durables et alignés.
+        Entrepreneuse, mère de trois enfants et fondatrice de <strong>Anka</strong>, j'accompagne les femmes à transformer leurs idées en projets concrets, durables et alignés.
       </p>
       <p class="reveal">
         Issue de la finance (Belgique &amp; Luxembourg), j'allie rigueur stratégique et approche humaine pour guider chaque étape, de l'idée au lancement.
       </p>
       <p class="reveal">
-        Mon objectif : entreprendre avec clarté, confiance et énergie — <strong>sans s'épuiser</strong>.
+        Mon objectif : entreprendre avec clarté, confiance et énergie <strong>sans s'épuiser</strong>.
       </p>
       <p class="reveal">
         À travers mes accompagnements, je transmets des outils concrets et une vision solide pour favoriser l'<strong>autonomisation</strong>, dans un cadre basé sur le <strong>bien-être</strong>, l'<strong>écoute</strong>, la <strong>bienveillance</strong> et le <strong>professionnalisme</strong>.
@@ -151,7 +159,41 @@
     <h2 class="reveal">Contact</h2>
     <p class="contact-subtitle reveal">Décrivez-moi votre situation, je vous répondrai dans les plus brefs délais.</p>
 
-    <form action="https://formspree.io/f/VOTRE_ID" method="POST" class="contact-form reveal" id="contactForm">
+    <!-- CONTACT DIRECT -->
+    <div class="contact-direct reveal">
+      <a href="tel:+32470603445" class="contact-direct-item">
+        <span class="contact-direct-icon" aria-hidden="true">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+        </span>
+        <span class="contact-direct-text">
+          <span class="contact-direct-label">Téléphone</span>
+          <span class="contact-direct-value">+32 470 60 34 45</span>
+        </span>
+      </a>
+
+      <a href="mailto:info@anka-conseil.be" class="contact-direct-item">
+        <span class="contact-direct-icon" aria-hidden="true">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m22 6-10 7L2 6"/>
+          </svg>
+        </span>
+        <span class="contact-direct-text">
+          <span class="contact-direct-label">Email</span>
+          <span class="contact-direct-value">info@anka-conseil.be</span>
+        </span>
+      </a>
+    </div>
+
+    <p class="contact-or reveal"><span>ou écrivez-moi ici</span></p>
+
+    <form action="https://formspree.io/f/xwlerzgy" method="POST" class="contact-form reveal" id="contactForm">
+      <!-- Anti-spam (champ invisible pour les humains, rempli par les robots) -->
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="form-hp" aria-hidden="true">
+      <!-- Objet de l'email reçu dans la boîte info@anka-conseil.be -->
+      <input type="hidden" name="_subject" value="Nouvelle demande via anka-conseil.be">
       <div class="form-row">
         <div class="form-group">
           <label for="nom">Nom</label>
@@ -184,10 +226,18 @@
         <label for="message">Votre projet</label>
         <textarea id="message" name="message" required></textarea>
       </div>
+      <div class="form-consent">
+        <input type="checkbox" id="consent" name="consent" required>
+        <label for="consent">
+          J'accepte que mes données soient utilisées pour être recontacté(e), conformément à la
+          <a href="politique-confidentialite.html">politique de confidentialité</a>.
+        </label>
+      </div>
       <button type="submit" class="btn" id="submitBtn">Envoyer</button>
-      <p class="form-success" id="formSuccess">
+      <p class="form-success" id="formSuccess" role="status" aria-live="polite">
         ✓ Message envoyé ! Je vous recontacte rapidement.
       </p>
+      <p class="form-error" id="formError" role="alert" aria-live="assertive"></p>
     </form>
   </div>
 </section>
@@ -202,17 +252,35 @@
       <div class="footer-logo">Anka</div>
       <p>Accompagnement entrepreneurial pour les femmes qui veulent créer avec clarté, confiance et énergie.</p>
 
-      <!-- Réseaux sociaux — à remplir quand les comptes sont prêts -->
+      <ul class="footer-contact">
+        <li>
+          <a href="tel:+32470603445">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            +32 470 60 34 45
+          </a>
+        </li>
+        <li>
+          <a href="mailto:info@anka-conseil.be">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="m22 6-10 7L2 6"/>
+            </svg>
+            info@anka-conseil.be
+          </a>
+        </li>
+      </ul>
+
+      <!-- Réseaux sociaux — à décommenter quand les comptes sont prêts
       <div class="footer-social">
         <a href="#" class="social-btn" aria-label="LinkedIn">
-          <!-- LinkedIn icon -->
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
             <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
           </svg>
         </a>
         <a href="#" class="social-btn" aria-label="Instagram">
-          <!-- Instagram icon -->
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
@@ -220,12 +288,12 @@
           </svg>
         </a>
         <a href="#" class="social-btn" aria-label="Facebook">
-          <!-- Facebook icon -->
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
           </svg>
         </a>
       </div>
+      -->
     </div>
 
     <!-- COLONNE 2 : Navigation -->
@@ -250,11 +318,20 @@
       </ul>
     </div>
 
+    <!-- COLONNE 4 : Légal -->
+    <div class="footer-col">
+      <h4>Légal</h4>
+      <ul>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+      </ul>
+    </div>
+
   </div>
 
   <!-- Barre de bas -->
   <div class="footer-bottom">
-    <p>© 2025 Anka — Tous droits réservés</p>
+    <p>© 2026 Anka — Tous droits réservés</p>
     <p>Belgique &amp; Luxembourg</p>
   </div>
 </footer>
